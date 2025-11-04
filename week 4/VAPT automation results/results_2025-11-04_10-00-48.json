@@ -1,0 +1,240 @@
+{
+  "target": "192.168.28.131",
+  "start_time": "2025-11-04_10-00-48",
+  "phases": {
+    "Reconnaissance": {
+      "timestamp": "2025-11-04T10:00:48.668248",
+      "data": {
+        "host_alive": true,
+        "dns_info": "** server can't find 131.28.168.192.in-addr.arpa: NXDOMAIN\n\n"
+      }
+    },
+    "Scanning": {
+      "timestamp": "2025-11-04T10:04:46.477783",
+      "data": {
+        "nmap_output_file": "vapt_results/nmap_2025-11-04_10-00-48.txt",
+        "open_ports": [
+          {
+            "port": "21/tcp",
+            "state": "open",
+            "service": "ftp"
+          },
+          {
+            "port": "22/tcp",
+            "state": "open",
+            "service": "ssh"
+          },
+          {
+            "port": "23/tcp",
+            "state": "open",
+            "service": "telnet"
+          },
+          {
+            "port": "25/tcp",
+            "state": "open",
+            "service": "smtp"
+          },
+          {
+            "port": "53/tcp",
+            "state": "open",
+            "service": "domain"
+          },
+          {
+            "port": "80/tcp",
+            "state": "open",
+            "service": "http"
+          },
+          {
+            "port": "111/tcp",
+            "state": "open",
+            "service": "rpcbind"
+          },
+          {
+            "port": "139/tcp",
+            "state": "open",
+            "service": "netbios-ssn"
+          },
+          {
+            "port": "445/tcp",
+            "state": "open",
+            "service": "netbios-ssn"
+          },
+          {
+            "port": "512/tcp",
+            "state": "open",
+            "service": "exec"
+          },
+          {
+            "port": "513/tcp",
+            "state": "open",
+            "service": "login"
+          },
+          {
+            "port": "514/tcp",
+            "state": "open",
+            "service": "tcpwrapped"
+          },
+          {
+            "port": "1099/tcp",
+            "state": "open",
+            "service": "java-rmi"
+          },
+          {
+            "port": "1524/tcp",
+            "state": "open",
+            "service": "bindshell"
+          },
+          {
+            "port": "2049/tcp",
+            "state": "open",
+            "service": "nfs"
+          },
+          {
+            "port": "2121/tcp",
+            "state": "open",
+            "service": "ftp"
+          },
+          {
+            "port": "3306/tcp",
+            "state": "open",
+            "service": "mysql"
+          },
+          {
+            "port": "3632/tcp",
+            "state": "open",
+            "service": "distccd"
+          },
+          {
+            "port": "5432/tcp",
+            "state": "open",
+            "service": "postgresql"
+          },
+          {
+            "port": "5900/tcp",
+            "state": "open",
+            "service": "vnc"
+          },
+          {
+            "port": "6000/tcp",
+            "state": "open",
+            "service": "X11"
+          },
+          {
+            "port": "6667/tcp",
+            "state": "open",
+            "service": "irc"
+          },
+          {
+            "port": "6697/tcp",
+            "state": "open",
+            "service": "irc"
+          },
+          {
+            "port": "8009/tcp",
+            "state": "open",
+            "service": "ajp13?"
+          },
+          {
+            "port": "8180/tcp",
+            "state": "open",
+            "service": "http"
+          },
+          {
+            "port": "8787/tcp",
+            "state": "open",
+            "service": "drb"
+          },
+          {
+            "port": "34690/tcp",
+            "state": "open",
+            "service": "java-rmi"
+          },
+          {
+            "port": "36549/tcp",
+            "state": "open",
+            "service": "mountd"
+          },
+          {
+            "port": "47159/tcp",
+            "state": "open",
+            "service": "status"
+          },
+          {
+            "port": "55447/tcp",
+            "state": "open",
+            "service": "nlockmgr"
+          }
+        ]
+      }
+    },
+    "Exploitation": {
+      "timestamp": "2025-11-04T10:04:46.477889",
+      "data": {
+        "note": "Manual exploitation required. Use Metasploit or custom exploits.",
+        "recommended_exploits": [
+          {
+            "port": "21/tcp",
+            "service": "ftp",
+            "exploit": "exploit/unix/ftp/vsftpd_234_backdoor",
+            "description": "VSFTPD 2.3.4 Backdoor Command Execution"
+          },
+          {
+            "port": "80/tcp",
+            "service": "http",
+            "exploit": "Manual web testing with Burp Suite",
+            "description": "Check for SQLi, XSS, IDOR, authentication bypass"
+          },
+          {
+            "port": "139/tcp",
+            "service": "netbios-ssn",
+            "exploit": "exploit/windows/smb/ms17_010_eternalblue",
+            "description": "SMB EternalBlue (MS17-010)"
+          },
+          {
+            "port": "445/tcp",
+            "service": "netbios-ssn",
+            "exploit": "exploit/windows/smb/ms17_010_eternalblue",
+            "description": "SMB EternalBlue (MS17-010)"
+          },
+          {
+            "port": "2121/tcp",
+            "service": "ftp",
+            "exploit": "exploit/unix/ftp/vsftpd_234_backdoor",
+            "description": "VSFTPD 2.3.4 Backdoor Command Execution"
+          },
+          {
+            "port": "8009/tcp",
+            "service": "ajp13?",
+            "exploit": "Manual web testing with Burp Suite",
+            "description": "Check for SQLi, XSS, IDOR, authentication bypass"
+          },
+          {
+            "port": "8180/tcp",
+            "service": "http",
+            "exploit": "Manual web testing with Burp Suite",
+            "description": "Check for SQLi, XSS, IDOR, authentication bypass"
+          }
+        ],
+        "exploitation_log": {
+          "timestamp": "2025-11-04T10:04:46.477873",
+          "target_ip": "192.168.28.131",
+          "vulnerability": "To be identified manually",
+          "ptes_phase": "Exploitation",
+          "status": "Pending manual testing"
+        }
+      }
+    },
+    "Post-Exploitation": {
+      "timestamp": "2025-11-04T10:04:46.477935",
+      "data": {
+        "note": "Execute after successful exploitation",
+        "tasks": [
+          "Privilege escalation (LinPEAS/WinPEAS)",
+          "Persistence establishment (cron/services)",
+          "Lateral movement enumeration",
+          "Data exfiltration simulation"
+        ]
+      }
+    }
+  }
+}
