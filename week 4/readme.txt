@@ -3,7 +3,6 @@ Penetration Testing Lab Report
 Project Overview
 This repository contains comprehensive documentation and procedures for a complete penetration testing engagement covering advanced exploitation, API security, privilege escalation, network attacks, mobile testing, and a full VAPT simulation.
 
----
 
 Lab 1: Advanced Exploitation
 
@@ -42,7 +41,6 @@ Key Findings:
 - Gained initial access via Meterpreter shell
 - Extracted user credentials and database information
 
----
 
 Lab 2: API Security Testing
 
@@ -51,7 +49,7 @@ Procedure: DVWA API Testing
 Tools Used: `Burp Suite`, `Postman`, `sqlmap`
 
 Steps:
-1. **Endpoint Discovery**
+1. Endpoint Discovery
    - Manual browsing with Burp Proxy enabled
    - Identified `/api/v1/users/{id}` endpoints
 
@@ -70,14 +68,14 @@ Steps:
 | 008 | BOLA (IDOR) | Critical | `/api/v1/users/{user_id}` |
 | 009 | GraphQL Information Disclosure | High | `/graphql` |
 
-**API Security Summary:**
+API Security Summary:
 Testing revealed critical authorization flaws allowing horizontal privilege escalation. GraphQL endpoints exposed sensitive schema information. Input validation was insufficient across multiple endpoints, requiring immediate remediation.
 
----
 
- Lab 3: Privilege Escalation & Persistence**
 
- Procedure: Linux Privilege Escalation**
+ Lab 3: Privilege Escalation & Persistence
+
+ Procedure: Linux Privilege Escalation
 
 Tools Used: `LinPEAS`, `Meterpreter`
 
@@ -113,7 +111,6 @@ Steps:
 Privilege Escalation Summary:
 LinPEAS identified multiple SUID misconfigurations. The `find` binary was exploited to gain root access. Persistence was established via cron job executing reverse shell every 5 minutes.
 
----
 
 Lab 4: Network Protocol Attacks**
 
@@ -147,7 +144,7 @@ Results
 Network Attack Summary:
 SMB relay attack successfully captured and relayed NTLM hashes, granting unauthorized access to target systems. ARP spoofing enabled traffic interception, revealing plaintext credentials.
 
----
+
 
 Lab 5: Mobile Application Testing
 Procedure: Android APK Analysis
@@ -169,7 +166,7 @@ Steps:
            return true;
        };
    });
-   ```
+
 
 Results
 | Test ID | Vulnerability | Severity | Target App |
@@ -180,7 +177,7 @@ Results
 Mobile Testing Summary:
 Static analysis revealed insecure data storage in logs. Dynamic analysis using Frida successfully bypassed client-side authentication controls. IPC components were exposed and exploitable.
 
----
+
 
  Lab 6: Capstone - Full VAPT Engagement
 
@@ -235,10 +232,11 @@ Remediation Recommendations
    - Rescan with OpenVAS to confirm remediation
    - Perform penetration test validation
 
-```
+
 
 Legal & Ethical Considerations
 - All testing performed in isolated lab environments
 - Proper authorization obtained for all targets
 - Educational purposes only
 - Follow responsible disclosure principles
+
